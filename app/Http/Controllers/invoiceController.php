@@ -10,15 +10,15 @@ use Illuminate\Support\Facades\DB;
 
 class invoiceController extends Controller
 {
-    public function getProducts()
-    {
-        $myfiles = invoice::where('user_id', Auth::id())->get();
-        //dd($myfiles);
-        return view('invoice', compact('myfiles'));
-    }
+    // public function getProducts()
+    // {
+    //     $myfiles = invoice::where('user_id', Auth::id())->get();
+    //     //dd($myfiles);
+    //     return view('invoice', compact('myfiles'));
+    // }
     public function store(Request $request)
     {
-        dd($request->all());
+      //  dd($request->all());
 
         $invoiceData = new invoice();
         $invoiceData->booking_date = $request->bookingDate;
@@ -110,9 +110,9 @@ class invoiceController extends Controller
             $invoiceData->hotel_vat_charge;
         $invoiceData->user_id = Auth::id(); // Set the user_id to the authenticated user's ID
 
-        dd($invoiceData);
+       
         $invoiceData->save();
-
+        dd($invoiceData);
 
 
         return back()

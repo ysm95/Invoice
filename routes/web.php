@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\invoiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
