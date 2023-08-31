@@ -1,4 +1,4 @@
-<html>
+{{-- <html>
 
 <head>
     <title>Invoice System</title>
@@ -8,14 +8,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
-</head>
+    
+</head> --}}
 
-<body>
+<x-app-layout>
+
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('Invoice Generator') }}
+        </h2>
+    </x-slot>
+
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 ">
     <div class="container">
-        <div class="p-5 text-center bg-light">
-            <h1 class="mb-3">Invoice System</h1>
-            <h4 class="mb-3">Invoice generator</h4>
-        </div>
+       
         <div class="">
 
             <form action="{{ route('store') }}" method="POST" enctype="multipart/form-data">
@@ -741,6 +750,7 @@
         <button onclick="myFunction()" class="btn btn-success" id="b">Print this Invoice</button>
         <br><br>
     </div>
+</div> </div> </div> </div>
     <script>
         function copyToClipboard(id) {
             document.getElementById(id).select();
@@ -845,6 +855,6 @@
             }
         }
     </script>
-</body>
+</x-app-layout>
 
-</html>
+{{-- </html> --}}

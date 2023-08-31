@@ -33,6 +33,11 @@ Route::get('/invoice', function () {
 Route::get('/invoice', [invoiceController::class, 'getInvoice'])->name('invoice');
 
 //End Invoice
+
+Route::get('/status', function () {
+    return view('status');
+})->middleware(['auth', 'verified'])->name('status');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

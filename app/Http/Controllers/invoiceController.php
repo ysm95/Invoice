@@ -13,7 +13,7 @@ class invoiceController extends Controller
 
     public function getInvoice()
     {
-        $mydata = invoice::where('user_id', Auth::id())->get();
+        $mydata = invoice::get();
         //dd($myfiles);
         return view('invoice', compact('mydata'));
     }
