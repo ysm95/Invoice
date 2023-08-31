@@ -10,17 +10,6 @@ use Illuminate\Support\Facades\DB;
 
 class invoiceController extends Controller
 {
-<<<<<<< HEAD
-    // public function getProducts()
-    // {
-    //     $myfiles = invoice::where('user_id', Auth::id())->get();
-    //     //dd($myfiles);
-    //     return view('invoice', compact('myfiles'));
-    // }
-    public function store(Request $request)
-    {
-      //  dd($request->all());
-=======
 
     public function getInvoice()
     {
@@ -31,7 +20,6 @@ class invoiceController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
->>>>>>> 32b1afc (UPDATE)
 
         $invoiceData = new invoice();
         $invoiceData->booking_date = $request->bookingDate;
@@ -123,11 +111,7 @@ class invoiceController extends Controller
             $invoiceData->hotel_vat_charge;
         $invoiceData->user_id = Auth::id(); // Set the user_id to the authenticated user's ID
 
-<<<<<<< HEAD
-       
-=======
         // dd($invoiceData);
->>>>>>> 32b1afc (UPDATE)
         $invoiceData->save();
         dd($invoiceData);
 
