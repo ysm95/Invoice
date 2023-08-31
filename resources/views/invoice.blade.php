@@ -264,8 +264,8 @@
 
                     <!-- Package name -->
                     <div class="col-6">
-                        <input type="text" class="form-control" id="totalAmountInCurrency" name="totalAmountInCurrency"
-                            placeholder="Enter Total amount" />
+                        <input type="text" class="form-control" id="totalAmountInCurrency"
+                            name="totalAmountInCurrency" placeholder="Enter Total amount" />
                         <label for="floatingInputValue"> Total amount:</label>
                         <small id="totalBookingFormHelpBlock" class="form-text text-muted">
                             1.00
@@ -618,6 +618,37 @@
         </div>
         <!-- Category Ends Here -->
 
+        {{-- Start Displaying data --}}
+        <div class="container">
+            <div class="row g-2 p-5 text-center bg-light">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">DATA</th>
+                            <th scope="col">DATA</th>
+                            <th scope="col">DATA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($mydata as $data)
+                            <tr>
+                                <th>{{ $data->user_id }}</th>
+                                {{-- <th>{{ $data->user_id }}</th>
+                                <th>{{ $data->user_id }}</th>
+                                <th>{{ $data->user_id }}</th> --}}
+
+                            </tr>
+                        @endforeach
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        {{-- END Displaying data --}}
+
+        <br><br><br><br><br>
 
         <form class="form-floating">
             <div class="row g-2 p-5 text-center bg-light">
